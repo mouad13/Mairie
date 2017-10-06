@@ -17,6 +17,8 @@ class AddTableCmsUsers extends Migration {
 			$table->increments('id');
 
 			$table->string('name')->nullable();
+			$table->string('firstname')->nullable();
+			$table->integer('tel')->nullable();
 			$table->string('photo')->nullable();
 			$table->string('email')->nullable();
 			$table->string('password')->nullable();
