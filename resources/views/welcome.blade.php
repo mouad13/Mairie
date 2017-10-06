@@ -27,7 +27,7 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link" href="">Demande d'inscription</a>
+              <a class="nav-link" href="http://192.168.1.132:8000/inscription">Demande d'inscription</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="http://192.168.1.132:8000/admin/login ">Connexion</a>
