@@ -5,7 +5,7 @@
 	use DB;
 	use CRUDBooster;
 
-	class AdminActivites17Controller extends \crocodicstudio\crudbooster\controllers\CBController {
+	class AdminEnfants20Controller extends \crocodicstudio\crudbooster\controllers\CBController {
 
 	    public function cbInit() {
 
@@ -19,58 +19,37 @@
 			$this->button_action_style = "button_icon";
 			$this->button_add = true;
 			$this->button_edit = true;
-			$this->button_delete = false;
+			$this->button_delete = true;
 			$this->button_detail = true;
 			$this->button_show = true;
 			$this->button_filter = true;
 			$this->button_import = false;
 			$this->button_export = false;
-			$this->table = "activites";
+			$this->table = "enfants";
 			# END CONFIGURATION DO NOT REMOVE THIS LINE
 
 			# START COLUMNS DO NOT REMOVE THIS LINE
 			$this->col = [];
 			$this->col[] = ["label"=>"Name","name"=>"name"];
-			$this->col[] = ["label"=>"Organisateur","name"=>"organisateur"];
-			$this->col[] = ["label"=>"Animateur","name"=>"animateur"];
-			$this->col[] = ["label"=>"Fk Lieu","name"=>"fk_lieu","join"=>"lieu,name"];
-			$this->col[] = ["label"=>"AgeMin","name"=>"ageMin"];
-			$this->col[] = ["label"=>"AgeMax","name"=>"ageMax"];
-			$this->col[] = ["label"=>"Contact","name"=>"contact"];
+			$this->col[] = ["label"=>"Prenom","name"=>"prenom"];
+			$this->col[] = ["label"=>"Age","name"=>"age"];
+			$this->col[] = ["label"=>"assmat","name"=>"fk_cms_users","join"=>"cms_users,name"];
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
 			# START FORM DO NOT REMOVE THIS LINE
 			$this->form = [];
-			$this->form[] = ['label'=>'Name','name'=>'name','type'=>'text','validation'=>'required','width'=>'col-sm-10','placeholder'=>'You can only enter the letter only'];
-			$this->form[] = ['label'=>'Organisateur','name'=>'organisateur','type'=>'text','validation'=>'required','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Animateur','name'=>'animateur','type'=>'text','validation'=>'required','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Fk Lieu','name'=>'fk_lieu','type'=>'number','validation'=>'string','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'AgeMin','name'=>'ageMin','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'AgeMax','name'=>'ageMax','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Contact','name'=>'contact','type'=>'text','validation'=>'required','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Descriptif','name'=>'descriptif','type'=>'text','validation'=>'required','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Jour','name'=>'jour','type'=>'date','validation'=>'required|date','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'HeureDeb','name'=>'heureDeb','type'=>'time','validation'=>'required|date_format:H:i:s','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'HeureFin','name'=>'heureFin','type'=>'time','validation'=>'required|date_format:H:i:s','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'PlaceRes','name'=>'placeRes','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'CapaciterAcc','name'=>'capaciterAcc','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Name','name'=>'name','type'=>'text','validation'=>'required|string|min:3|max:70','width'=>'col-sm-10','placeholder'=>'You can only enter the letter only'];
+			$this->form[] = ['label'=>'Prenom','name'=>'prenom','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Age','name'=>'age','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'assmat','name'=>'fk_cms_users','type'=>'hidden','value'=>CRUDBooster::Myid(),'width'=>'col-sm-9'];
 			# END FORM DO NOT REMOVE THIS LINE
 
 			# OLD START FORM
 			//$this->form = [];
-			//$this->form[] = ['label'=>'Name','name'=>'name','type'=>'text','validation'=>'required','width'=>'col-sm-10','placeholder'=>'You can only enter the letter only'];
-			//$this->form[] = ['label'=>'Organisateur','name'=>'organisateur','type'=>'text','validation'=>'required','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Animateur','name'=>'animateur','type'=>'text','validation'=>'required','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Fk Lieu','name'=>'fk_lieu','type'=>'number','validation'=>'string','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'AgeMin','name'=>'ageMin','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'AgeMax','name'=>'ageMax','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Contact','name'=>'contact','type'=>'text','validation'=>'required','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Descriptif','name'=>'descriptif','type'=>'text','validation'=>'required','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Jour','name'=>'jour','type'=>'date','validation'=>'required|date','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'HeureDeb','name'=>'heureDeb','type'=>'time','validation'=>'required|date_format:H:i:s','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'HeureFin','name'=>'heureFin','type'=>'time','validation'=>'required|date_format:H:i:s','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'PlaceRes','name'=>'placeRes','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'CapaciterAcc','name'=>'capaciterAcc','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Name','name'=>'name','type'=>'text','validation'=>'required|string|min:3|max:70','width'=>'col-sm-10','placeholder'=>'You can only enter the letter only'];
+			//$this->form[] = ['label'=>'Prenom','name'=>'prenom','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Age','name'=>'age','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'assmat','name'=>'fk_cms_users','type'=>'hidden','width'=>'col-sm-9'];
 			# OLD END FORM
 
 			/* 
