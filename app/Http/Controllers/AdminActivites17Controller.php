@@ -15,13 +15,13 @@
 			$this->orderby = "id,desc";
 			$this->global_privilege = false;
 			$this->button_table_action = true;
-			$this->button_bulk_action = true;
+			$this->button_bulk_action = false;
 			$this->button_action_style = "button_icon";
 			$this->button_add = true;
 			$this->button_edit = true;
-			$this->button_delete = false;
+			$this->button_delete = true;
 			$this->button_detail = true;
-			$this->button_show = true;
+			$this->button_show = false;
 			$this->button_filter = true;
 			$this->button_import = false;
 			$this->button_export = false;
@@ -33,7 +33,8 @@
 			$this->col[] = ["label"=>"Name","name"=>"name"];
 			$this->col[] = ["label"=>"Organisateur","name"=>"organisateur"];
 			$this->col[] = ["label"=>"Animateur","name"=>"animateur"];
-			$this->col[] = ["label"=>"Fk Lieu","name"=>"fk_lieu","join"=>"lieu,name"];
+			$this->col[] = ["label"=>"Lieu","name"=>"fk_lieu","join"=>"lieu,name"];
+			$this->col[] = ["label"=>"Adresse","name"=>"fk_lieu","join"=>"lieu,adresse"];
 			$this->col[] = ["label"=>"AgeMin","name"=>"ageMin"];
 			$this->col[] = ["label"=>"AgeMax","name"=>"ageMax"];
 			$this->col[] = ["label"=>"Contact","name"=>"contact"];
@@ -42,9 +43,10 @@
 			# START FORM DO NOT REMOVE THIS LINE
 			$this->form = [];
 			$this->form[] = ['label'=>'Name','name'=>'name','type'=>'text','validation'=>'required','width'=>'col-sm-10','placeholder'=>'You can only enter the letter only'];
+			$this->form[] = ['label'=>'Image','name'=>'image','type'=>'upload','width'=>'col-sm-9'];
 			$this->form[] = ['label'=>'Organisateur','name'=>'organisateur','type'=>'text','validation'=>'required','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Animateur','name'=>'animateur','type'=>'text','validation'=>'required','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Fk Lieu','name'=>'fk_lieu','type'=>'number','validation'=>'string','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Lieu','name'=>'fk_lieu','type'=>'select2','validation'=>'string','width'=>'col-sm-10','datatable'=>'lieu,name'];
 			$this->form[] = ['label'=>'AgeMin','name'=>'ageMin','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'AgeMax','name'=>'ageMax','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Contact','name'=>'contact','type'=>'text','validation'=>'required','width'=>'col-sm-10'];
@@ -59,9 +61,10 @@
 			# OLD START FORM
 			//$this->form = [];
 			//$this->form[] = ['label'=>'Name','name'=>'name','type'=>'text','validation'=>'required','width'=>'col-sm-10','placeholder'=>'You can only enter the letter only'];
+			//$this->form[] = ['label'=>'Image','name'=>'image','type'=>'upload','width'=>'col-sm-9'];
 			//$this->form[] = ['label'=>'Organisateur','name'=>'organisateur','type'=>'text','validation'=>'required','width'=>'col-sm-10'];
 			//$this->form[] = ['label'=>'Animateur','name'=>'animateur','type'=>'text','validation'=>'required','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Fk Lieu','name'=>'fk_lieu','type'=>'number','validation'=>'string','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Lieu','name'=>'fk_lieu','type'=>'select2','validation'=>'string','width'=>'col-sm-10','datatable'=>'lieu,name'];
 			//$this->form[] = ['label'=>'AgeMin','name'=>'ageMin','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
 			//$this->form[] = ['label'=>'AgeMax','name'=>'ageMax','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
 			//$this->form[] = ['label'=>'Contact','name'=>'contact','type'=>'text','validation'=>'required','width'=>'col-sm-10'];

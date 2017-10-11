@@ -5,7 +5,7 @@
 	use DB;
 	use CRUDBooster;
 
-	class AdminEnfantsController extends \crocodicstudio\crudbooster\controllers\CBController {
+	class AdminLieu21Controller extends \crocodicstudio\crudbooster\controllers\CBController {
 
 	    public function cbInit() {
 
@@ -15,41 +15,41 @@
 			$this->orderby = "id,desc";
 			$this->global_privilege = false;
 			$this->button_table_action = true;
-			$this->button_bulk_action = true;
+			$this->button_bulk_action = false;
 			$this->button_action_style = "button_icon";
 			$this->button_add = true;
 			$this->button_edit = true;
 			$this->button_delete = true;
 			$this->button_detail = true;
-			$this->button_show = true;
+			$this->button_show = false;
 			$this->button_filter = true;
 			$this->button_import = false;
 			$this->button_export = false;
-			$this->table = "enfants";
+			$this->table = "lieu";
 			# END CONFIGURATION DO NOT REMOVE THIS LINE
 
 			# START COLUMNS DO NOT REMOVE THIS LINE
 			$this->col = [];
 			$this->col[] = ["label"=>"Name","name"=>"name"];
-			$this->col[] = ["label"=>"Prenom","name"=>"prenom"];
-			$this->col[] = ["label"=>"Age","name"=>"age"];
-			$this->col[] = ["label"=>"Fk Users","name"=>"fk_cms_users","join"=>"cms_users,name"];
+			$this->col[] = ["label"=>"Adresse","name"=>"adresse"];
+			$this->col[] = ["label"=>"Ville","name"=>"ville"];
+			$this->col[] = ["label"=>"CodePostal","name"=>"codePostal"];
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
 			# START FORM DO NOT REMOVE THIS LINE
 			$this->form = [];
 			$this->form[] = ['label'=>'Name','name'=>'name','type'=>'text','validation'=>'required|string|min:3|max:70','width'=>'col-sm-10','placeholder'=>'You can only enter the letter only'];
-			$this->form[] = ['label'=>'Prenom','name'=>'prenom','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Age','name'=>'age','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Fk Cms Users','name'=>'fk_cms_users','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Adresse','name'=>'adresse','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Ville','name'=>'ville','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'CodePostal','name'=>'codePostal','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
 			# END FORM DO NOT REMOVE THIS LINE
 
 			# OLD START FORM
 			//$this->form = [];
 			//$this->form[] = ["label"=>"Name","name"=>"name","type"=>"text","required"=>TRUE,"validation"=>"required|string|min:3|max:70","placeholder"=>"You can only enter the letter only"];
-			//$this->form[] = ["label"=>"Prenom","name"=>"prenom","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
-			//$this->form[] = ["label"=>"Age","name"=>"age","type"=>"number","required"=>TRUE,"validation"=>"required|integer|min:0"];
-			//$this->form[] = ["label"=>"Fk Cms Users","name"=>"fk_cms_users","type"=>"number","required"=>TRUE,"validation"=>"required|integer|min:0"];
+			//$this->form[] = ["label"=>"Adresse","name"=>"adresse","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
+			//$this->form[] = ["label"=>"Ville","name"=>"ville","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
+			//$this->form[] = ["label"=>"CodePostal","name"=>"codePostal","type"=>"number","required"=>TRUE,"validation"=>"required|integer|min:0"];
 			# OLD END FORM
 
 			/* 
