@@ -1,5 +1,9 @@
 <?php
+
+
+
 use App\Activite;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,8 +16,10 @@ use App\Activite;
 */
 
 Route::get('/', function () {
+
 	$act = Activite::all();
     return view('welcome',['activites' => $act]);
+
 });
 
 

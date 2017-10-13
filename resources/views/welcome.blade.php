@@ -13,6 +13,7 @@
   <link rel="stylesheet" type="text/css" href="css/style.css">
 
 
+
 </head>
 <body>
 
@@ -273,6 +274,7 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
             </div>
           </div>
         </div>
@@ -299,3 +301,4 @@
 
 </body>
 </html>
+
