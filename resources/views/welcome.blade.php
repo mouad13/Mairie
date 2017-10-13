@@ -86,6 +86,14 @@
 
 
     <h2 class="title1">Activité du jour</h2>
+    <?php 
+     
+      for ($i=1; $i < 20 ; $i++) { 
+        $varid= "myModal";
+        echo $varid. $i;
+        
+      }
+     ?>
 @foreach ($activites as $activity)
    
 
@@ -115,6 +123,24 @@
               <img src="images/téléchargement.png">
               <h4>Description</h4>
               <p>{{ $activity->descriptif }}</p>
+                 <?php
+              
+             try {
+                $pdo = new PDO('mysql:host=localhost;dbname=mairie','root','root');
+
+               $sql = 'SELECT COUNT(fk_enfants) AS nb FROM reservations';
+                $result = $pdo->query($sql);
+                $columns = $result->fetch();
+                $nb = $columns['nb'];
+                
+               echo 'Il y a '.$nb.' enregistrement(s).';
+
+             }
+              catch(PDOException $e) {
+                  echo 'Erreur PDO : '.$e->getMessage();
+              }
+            
+           ?>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
