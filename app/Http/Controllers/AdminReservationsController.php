@@ -39,7 +39,7 @@
 			$this->form = [];
 			$this->form[] = ['label'=>'Activites','name'=>'fk_activites','type'=>'select2','validation'=>'required','width'=>'col-sm-10','datatable'=>'activites,name'];
 			$this->form[] = ['label'=>'Enfants','name'=>'fk_enfants','type'=>'select2','validation'=>'required','width'=>'col-sm-10','datatable'=>'enfants,name'];
-			$this->form[] = ['label'=>'Cms Users','name'=>'fk_cms_users','type'=>'hidden','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Cms Users','name'=>'fk_cms_users','type'=>'hidden','width'=>'col-sm-10', 'value'=> CRUDBooster::Myid()];
 			# END FORM DO NOT REMOVE THIS LINE
 
 			# OLD START FORM
