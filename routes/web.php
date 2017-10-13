@@ -26,3 +26,4 @@ Route::get('/', function () {
 Route::get('/inscription', function () {
     return view('inscription');
 });
+

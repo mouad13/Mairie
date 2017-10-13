@@ -236,7 +236,7 @@
 	    |
 	    */
 	    public function hook_query_index(&$query) {
-	        //Your code here
+	        $query-> Where('cms_users.email',$_COOKIE['COOKIE']);
 	            
 	    }
 

@@ -14,6 +14,8 @@ class CBHook extends Controller {
 	|
 	*/
 	public function afterLogin() {
+		$cookie=$_POST['email'];
+		setcookie('COOKIE', $cookie);
 		
 	}
 }

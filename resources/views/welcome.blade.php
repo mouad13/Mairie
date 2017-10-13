@@ -83,6 +83,8 @@
   <div class="container">
 
 
+
+
     <h2 class="title1">Activité du jour</h2>
 @foreach ($activites as $activity)
    
