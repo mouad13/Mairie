@@ -81,35 +81,64 @@
 
   <!-- Page Content -->
   <div class="container">
-  {{$activites}}
 
+
+    <h2 class="title1">Activité du jour</h2>
+    <?php 
+     
+      for ($i=1; $i < 20 ; $i++) { 
+        $varid= "myModal";
+        echo $varid. $i;
+        
+      }
+     ?>
+@foreach ($activites as $activity)
+   
 
     <!-- Portfolio Section -->
-    <h2 class="title1">Activité du jour</h2>
 
     <div class="row">
       <div class="col-lg-4 col-sm-6 portfolio-item">
         <div class="card h-100">
-          <a href="#"><img class="card-img-top" src="images/peinture.jpg" alt=""></a>
+          <img class="card-img-top" src={{ $activity->image }} alt="">
           <div class="card-body">
             <h4 class="card-title">
-              <a href=""  data-toggle="modal" data-target="#myModal">Atelier Peinture</a>
+              <a href=""  data-toggle="modal" data-target="#myModal">{{ $activity->name }}</a>
             </h4>
-            <p class="card-text">Création d'un atelier peinture à Van Gogh</p>
+            <p class="card-text">{{ $activity->descriptif }}</p>
           </div>
         </div>
       </div>
+
       <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title" id="myModalLabel">titre</h4>
+              <h4 class="modal-title" id="myModalLabel">{{ $activity->name }}</h4>
             </div>
             <div class="modal-body">
               <img src="images/téléchargement.png">
               <h4>Description</h4>
-              <p>description</p>
+              <p>{{ $activity->descriptif }}</p>
+                 <?php
+              
+             try {
+                $pdo = new PDO('mysql:host=localhost;dbname=mairie','root','root');
+
+               $sql = 'SELECT COUNT(fk_enfants) AS nb FROM reservations';
+                $result = $pdo->query($sql);
+                $columns = $result->fetch();
+                $nb = $columns['nb'];
+                
+               echo 'Il y a '.$nb.' enregistrement(s).';
+
+             }
+              catch(PDOException $e) {
+                  echo 'Erreur PDO : '.$e->getMessage();
+              }
+            
+           ?>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -117,11 +146,13 @@
           </div>
         </div>
       </div>
+    <hr>
 
+@endforeach
 
-      <div class="col-lg-4 col-sm-6 portfolio-item">
+   <!--    <div class="col-lg-4 col-sm-6 portfolio-item">
         <div class="card h-100">
-          <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+          <img class="card-img-top" src="http://placehold.it/700x400" alt="">
           <div class="card-body">
             <h4 class="card-title">
               <a href=""  data-toggle="modal" data-target="#myModal">Project Two</a>
@@ -152,7 +183,7 @@
 
       <div class="col-lg-4 col-sm-6 portfolio-item">
         <div class="card h-100">
-          <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+          <img class="card-img-top" src="http://placehold.it/700x400" alt="">
           <div class="card-body">
             <h4 class="card-title">
               <a href=""  data-toggle="modal" data-target="#myModal">Project Three</a>
@@ -183,7 +214,7 @@
 
       <div class="col-lg-4 col-sm-6 portfolio-item">
         <div class="card h-100">
-          <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+          <img class="card-img-top" src="http://placehold.it/700x400" alt="">
           <div class="card-body">
             <h4 class="card-title">
               <a href=""  data-toggle="modal" data-target="#myModal">Project Four</a>
@@ -214,12 +245,12 @@
 
       <div class="col-lg-4 col-sm-6 portfolio-item">
         <div class="card h-100">
-          <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+          <img class="card-img-top" src="http://placehold.it/700x400" alt="">
           <div class="card-body">
             <h4 class="card-title">
               <a href=""  data-toggle="modal" data-target="#myModal">Project Five</a>
             </h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio.</p>
           </div>
         </div>
       </div>
@@ -245,7 +276,7 @@
 
       <div class="col-lg-4 col-sm-6 portfolio-item">
         <div class="card h-100">
-          <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+          <img class="card-img-top" src="http://placehold.it/700x400" alt="">
           <div class="card-body">
             <h4 class="card-title">
               <a href=""  data-toggle="modal" data-target="#myModal">Project Six</a>
@@ -273,9 +304,8 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
     <!-- /.row -->
-    <hr>
 
   </div>
   <!-- /.container -->
