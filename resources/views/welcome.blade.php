@@ -126,7 +126,7 @@
                  <?php
               
              try {
-                $pdo = new PDO('mysql:host=localhost;dbname=mairie','root','root');
+                $pdo = new PDO('mysql:host=localhost;dbname=mairie','root','azerty1143');
 
                $sql = 'SELECT COUNT(fk_enfants) AS nb FROM reservations';
                 $result = $pdo->query($sql);
@@ -150,166 +150,11 @@
       </div>
     <hr>
 
+  </div>
 @endforeach
 
-   <!--    <div class="col-lg-4 col-sm-6 portfolio-item">
-        <div class="card h-100">
-          <img class="card-img-top" src="http://placehold.it/700x400" alt="">
-          <div class="card-body">
-            <h4 class="card-title">
-              <a href=""  data-toggle="modal" data-target="#myModal">Project Two</a>
-            </h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-          </div>
-        </div>
-      </div>
-      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title" id="myModalLabel">titre</h4>
-            </div>
-            <div class="modal-body">
-              <img src="images/téléchargement.png">
-              <h4>Description</h4>
-              <p>description</p>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-          </div>
-        </div>
-      </div>
-     
+ 
 
-      <div class="col-lg-4 col-sm-6 portfolio-item">
-        <div class="card h-100">
-          <img class="card-img-top" src="http://placehold.it/700x400" alt="">
-          <div class="card-body">
-            <h4 class="card-title">
-              <a href=""  data-toggle="modal" data-target="#myModal">Project Three</a>
-            </h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos quisquam, error quod sed cumque, odio distinctio velit nostrum temporibus necessitatibus et facere atque iure perspiciatis mollitia recusandae vero vel quam!</p>
-          </div>
-        </div>
-      </div>
-      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title" id="myModalLabel">titre</h4>
-            </div>
-            <div class="modal-body">
-              <img src="images/téléchargement.png">
-              <h4>Description</h4>
-              <p>description</p>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-          </div>
-        </div>
-      </div>
-     
-
-      <div class="col-lg-4 col-sm-6 portfolio-item">
-        <div class="card h-100">
-          <img class="card-img-top" src="http://placehold.it/700x400" alt="">
-          <div class="card-body">
-            <h4 class="card-title">
-              <a href=""  data-toggle="modal" data-target="#myModal">Project Four</a>
-            </h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-          </div>
-        </div>
-      </div>
-      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title" id="myModalLabel">titre</h4>
-            </div>
-            <div class="modal-body">
-              <img src="images/téléchargement.png">
-              <h4>Description</h4>
-              <p>description</p>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    
-
-      <div class="col-lg-4 col-sm-6 portfolio-item">
-        <div class="card h-100">
-          <img class="card-img-top" src="http://placehold.it/700x400" alt="">
-          <div class="card-body">
-            <h4 class="card-title">
-              <a href=""  data-toggle="modal" data-target="#myModal">Project Five</a>
-            </h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio.</p>
-          </div>
-        </div>
-      </div>
-      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title" id="myModalLabel">titre</h4>
-            </div>
-            <div class="modal-body">
-              <img src="images/téléchargement.png">
-              <h4>Description</h4>
-              <p>description</p>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-
-      <div class="col-lg-4 col-sm-6 portfolio-item">
-        <div class="card h-100">
-          <img class="card-img-top" src="http://placehold.it/700x400" alt="">
-          <div class="card-body">
-            <h4 class="card-title">
-              <a href=""  data-toggle="modal" data-target="#myModal">Project Six</a>
-            </h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque earum nostrum suscipit ducimus nihil provident, perferendis rem illo, voluptate atque, sit eius in voluptates, nemo repellat fugiat excepturi! Nemo, esse.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title" id="myModalLabel">titre</h4>
-            </div>
-            <div class="modal-body">
-              <img src="images/téléchargement.png">
-              <h4>Description</h4>
-              <p>description</p>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-
-            </div>
-          </div>
-        </div>
-      </div> -->
-    <!-- /.row -->
-
-  </div>
   <!-- /.container -->
 
   <!-- Footer -->

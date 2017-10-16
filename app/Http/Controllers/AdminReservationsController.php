@@ -32,23 +32,22 @@
 			$this->col = [];
 			$this->col[] = ["label"=>"Activites","name"=>"fk_activites","join"=>"activites,name"];
 			$this->col[] = ["label"=>"Enfants","name"=>"fk_enfants","join"=>"enfants,name"];
-			$this->col[] = ["label"=>"Users","name"=>"fk_cms_users","join"=>"cms_users,name"];
+			$this->col[] = ["label"=>"Assmat","name"=>"fk_cms_users","join"=>"cms_users,name"];
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
 			# START FORM DO NOT REMOVE THIS LINE
 			$this->form = [];
 			$this->form[] = ['label'=>'Activites','name'=>'fk_activites','type'=>'select2','validation'=>'required','width'=>'col-sm-10','datatable'=>'activites,name'];
 			$this->form[] = ['label'=>'Enfants','name'=>'fk_enfants','type'=>'select2','validation'=>'required','width'=>'col-sm-10','datatable'=>'enfants,name'];
-
 			$this->form[] = ['label'=>'Cms Users','name'=>'fk_cms_users','type'=>'hidden','value'=>CRUDBooster::Myid(),'width'=>'col-sm-10'];
-
 			# END FORM DO NOT REMOVE THIS LINE
 
 			# OLD START FORM
 			//$this->form = [];
 			//$this->form[] = ['label'=>'Activites','name'=>'fk_activites','type'=>'select2','validation'=>'required','width'=>'col-sm-10','datatable'=>'activites,name'];
 			//$this->form[] = ['label'=>'Enfants','name'=>'fk_enfants','type'=>'select2','validation'=>'required','width'=>'col-sm-10','datatable'=>'enfants,name'];
-			//$this->form[] = ['label'=>'Cms Users','name'=>'fk_cms_users','type'=>'hidden','width'=>'col-sm-10'];
+			//
+			//$this->form[] = ['label'=>'Cms Users','name'=>'fk_cms_users','type'=>'hidden','value'=>CRUDBooster::Myid(),'width'=>'col-sm-10'];
 			# OLD END FORM
 
 			/* 
@@ -235,7 +234,7 @@
 	    |
 	    */
 	    public function hook_query_index(&$query) {
-	        //Your code here
+	        $query-> Where('cms_users.email',$_COOKIE['COOKIE']);
 	            
 	    }
 
