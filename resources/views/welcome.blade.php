@@ -80,90 +80,48 @@
   </header>
 
   <!-- Page Content -->
+
+
   <div class="container">
-
-
-
-
     <h2 class="title1">Activité du jour</h2>
+  </div>
     <?php 
      
-      for ($i=1; $i < 20 ; $i++) { 
-        $varid= "myModal";
-        echo $varid. $i;
+      // for ($i=1; $i < 20 ; $i++) { 
+      //   $varid= "myModal";
+      //   echo $varid. $i;
         
-      }
+      // }
      ?>
+  <div class="row">
 @foreach ($activites as $activity)
-   
+ @continue(count($activity->reservations) >= $activity-> capaciterAcc)
 
-    <!-- Portfolio Section -->
 
-    <div class="row">
-      <div class="col-lg-4 col-sm-6 portfolio-item">
-        <div class="card h-100">
-          <img class="card-img-top" src={{ $activity->image }} alt="">
-          <div class="card-body">
-            <h4 class="card-title">
-              <a href=""  data-toggle="modal" data-target="#myModal">{{ $activity->name }}</a>
-            </h4>
-            <p class="card-text">{{ $activity->descriptif }}</p>
-          </div>
-        </div>
-      </div>
 
-      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title" id="myModalLabel">{{ $activity->name }}</h4>
-            </div>
-            <div class="modal-body">
-              <img src="images/téléchargement.png">
-              <h4>Description</h4>
-              <p>{{ $activity->descriptif }}</p>
-                 <?php
-              
-             try {
-                $pdo = new PDO('mysql:host=localhost;dbname=mairie','root','azerty1143');
 
-               $sql = 'SELECT COUNT(fk_enfants) AS nb FROM reservations';
-                $result = $pdo->query($sql);
-                $columns = $result->fetch();
-                $nb = $columns['nb'];
-                
-               echo 'Il y a '.$nb.' enregistrement(s).';
-
-             }
-              catch(PDOException $e) {
-                  echo 'Erreur PDO : '.$e->getMessage();
-              }
-            
-           ?>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <div class="col-lg-4 col-sm-6 portfolio-item">
+          <div class="card h-100">
+              <img class="card-img-top" src={{ $activity->image }} alt="">
+            <div class="card-body">
+              <h4 class="card-title">
+                <a href="#">{{ $activity->name }}</a>
+              </h4>
+              <p class="card-text">{{ $activity->descriptif }}</p>
+              <p>le {{$activity->jour}}</p>
+             <p> il reste {{$activity->capaciterAcc - count($activity->reservations)}} place(s)</p>
             </div>
           </div>
         </div>
+        @endforeach
       </div>
-    <hr>
-
-  </div>
-@endforeach
-
- 
-
-  <!-- /.container -->
-
   <!-- Footer -->
-  <footer class="py-2 bg-red">
-    <div class="container">
-      <p class="m-0 text-center text-white">Made in Simplon</p>
-    </div>
-    <!-- /.container -->
-  </footer>
+     <footer class="py-2 bg-black">
+      <div class="container">
+        <p class="m-0 text-center text-white"> &copy; Simplon</p>
+      </div>
+      <!-- /.container -->
+    </footer>
 
 
   <script src="/js/jquery.min.js"></script>
@@ -174,4 +132,3 @@
 
 </body>
 </html>
-

@@ -27,3 +27,4 @@ Route::get('/inscription', function () {
     return view('inscription');
 });
 
+
