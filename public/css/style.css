@@ -42,3 +42,8 @@ footer{
 a:hover{
     color: silver;
 }
+
+.card-title {
+
+    color: blue;
+}

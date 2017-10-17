@@ -47,24 +47,18 @@
       </ol>
       <div class="carousel-inner" role="listbox">
         <!-- Slide One - Set the background image for this slide in the line below -->
-        <div class="carousel-item active" style="background-image: url('http://placehold.it/1900x1080')">
+        <div class="carousel-item active" style="background-image: url('/images/slide.jpg')">
           <div class="carousel-caption d-none d-md-block">
-            <h3>First Slide</h3>
-            <p>This is a description for the first slide.</p>
           </div>
         </div>
         <!-- Slide Two - Set the background image for this slide in the line below -->
-        <div class="carousel-item" style="background-image: url('http://placehold.it/1900x1080')">
+        <div class="carousel-item" style="background-image: url('/images/slide2.jpg')">
           <div class="carousel-caption d-none d-md-block">
-            <h3>Second Slide</h3>
-            <p>This is a description for the second slide.</p>
           </div>
         </div>
         <!-- Slide Three - Set the background image for this slide in the line below -->
-        <div class="carousel-item" style="background-image: url('http://placehold.it/1900x1080')">
+        <div class="carousel-item" style="background-image: url('/images/slide3.jpg')">
           <div class="carousel-caption d-none d-md-block">
-            <h3>Third Slide</h3>
-            <p>This is a description for the third slide.</p>
           </div>
         </div>
       </div>
@@ -84,7 +78,6 @@
 
   <div class="container">
     <h2 class="title1">Activité du jour</h2>
-  </div>
     <?php 
      
       // for ($i=1; $i < 20 ; $i++) { 
@@ -105,7 +98,7 @@
               <img class="card-img-top" src={{ $activity->image }} alt="">
             <div class="card-body">
               <h4 class="card-title">
-                <a href="#">{{ $activity->name }}</a>
+                <a >{{ $activity->name }}</a>
               </h4>
               <p class="card-text">{{ $activity->descriptif }}</p>
               <p>le {{$activity->jour}}</p>
@@ -116,6 +109,7 @@
         @endforeach
       </div>
   <!-- Footer -->
+  </div>
      <footer class="py-2 bg-black">
       <div class="container">
         <p class="m-0 text-center text-white"> &copy; Simplon</p>

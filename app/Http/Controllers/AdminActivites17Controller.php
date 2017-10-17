@@ -15,7 +15,7 @@
 			$this->orderby = "id,desc";
 			$this->global_privilege = false;
 			$this->button_table_action = true;
-			$this->button_bulk_action = false;
+			$this->button_bulk_action = true;
 			$this->button_action_style = "button_icon";
 			$this->button_add = true;
 			$this->button_edit = true;
@@ -54,8 +54,7 @@
 			$this->form[] = ['label'=>'Jour','name'=>'jour','type'=>'date','validation'=>'required|date','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'HeureDeb','name'=>'heureDeb','type'=>'time','validation'=>'required|date_format:H:i:s','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'HeureFin','name'=>'heureFin','type'=>'time','validation'=>'required|date_format:H:i:s','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'PlaceRes','name'=>'placeRes','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'CapaciterAcc','name'=>'capaciterAcc','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Nombres de places','name'=>'capaciterAcc','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
 			# END FORM DO NOT REMOVE THIS LINE
 
 			# OLD START FORM
@@ -72,8 +71,8 @@
 			//$this->form[] = ['label'=>'Jour','name'=>'jour','type'=>'date','validation'=>'required|date','width'=>'col-sm-10'];
 			//$this->form[] = ['label'=>'HeureDeb','name'=>'heureDeb','type'=>'time','validation'=>'required|date_format:H:i:s','width'=>'col-sm-10'];
 			//$this->form[] = ['label'=>'HeureFin','name'=>'heureFin','type'=>'time','validation'=>'required|date_format:H:i:s','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'PlaceRes','name'=>'placeRes','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'CapaciterAcc','name'=>'capaciterAcc','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'PlaceRes','name'=>'placeRes','type'=>'hidden','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Nombres de places','name'=>'capaciterAcc','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
 			# OLD END FORM
 
 			/* 
